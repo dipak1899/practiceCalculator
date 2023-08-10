@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+
+        let str = "";
+        let num1 = 0, num2 = 0, num3 = 0;
+        let op = "";
+        function handleNum(num) {
+
+
+            str = str + num;
+            document.getElementById("t1").value = str;
+        }
+
+
+        function handleOP(op1) {
+            num1 = parseInt(str);
+            document.getElementById("t1").value = "";
+            str = "";
+            op = op1;
+        }
+        function handleEQ() {
+            num2 = parseInt(str);
+            document.getElementById("t1").value = "";
+            if (op == "+")
+                num3 = num1 + num2;
+
+            else if (op == "-") {
+                num3 = num1 - num2;
+
+            }
+
+            else if (op == "*") {
+                num3 = num1 * nim2;
+            }
+
+            else if (op == "/") {
+                num3 = num1 / num2;
+            }
+            document.getElementById("t1").value = num3;
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+</head>
+
+<body>
+    <div class="main">
+
+
+        <div>
+            <span></span>
+            <input type="text" id="t1" class="text1">
+
+        </div>
+        <div>
+            <button class="btn" value="7" onclick="handleNum('7')">7</button>
+            <button class="btn" value="8" onclick="handleNum('8')">8</button>
+            <button class="btn" value="9" onclick="handleNum('9')">9</button>
+            <button class="btn operator" value=""></button>
+
+        </div>
+        <div>
+            <button class="btn" value="4" onclick="handleNum('4')">4</button>
+            <button class="btn" value="5" onclick="handleNum('5')">5</button>
+            <button class="btn" value="6" onclick="handleNum('6')">6</button>
+            <button class="btn operator" value="+" onclick="handleOP('+')">+</button>
+        </div>
+        <div>
+            <button class="btn" value="1" onclick="handleNum('1')">1</button>
+            <button class="btn" value="2" onclick="handleNum('2')">2</button>
+            <button class="btn" value="3" onclick="handleNum('3')">3</button>
+            <button class="btn operator" value="-" onclick="handleOP('-')">-</button>
+
+
+        </div>
+        <div>
+            <button class="btn" value=".">.</button>
+            <button class="btn" value="0">0</button>
+            <button class="btn operator" value="=" onclick="handleEQ()">=</button>
+            <button class="btn operator" value="/">/</button>
+        </div>
+        <div>
+            <button class="cbtn operator">CLEAR</button>
+        </div>
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
